@@ -146,20 +146,20 @@ const EmployeeForm = () => {
 			errors.empMobile = "mobile should be 10 characters";
 		}
 
-		if (!user.fileName) {
-			errors.fileName = "Pic is required!";
-		}
-		else if (!user.fileName.match(/\.(jpg|jpeg)$/)) {
-			errors.fileName = "Format is not ok!";
+		// if (!user.fileName) {
+		// 	errors.fileName = "Pic is required!";
+		// }
+		// else if (!user.fileName.match(/\.(jpg|jpeg)$/)) {
+		// 	errors.fileName = "Format is not ok!";
 
-		}
-		if (!user.pdfName) {
-			errors.pdfName = "Resume is required!";
-		}
-		else if (!user.pdfName.match(/\.(pdf)$/)) {
-			errors.pdfName = "Format is not ok!";
+		// }
+		// if (!user.pdfName) {
+		// 	errors.pdfName = "Resume is required!";
+		// }
+		// else if (!user.pdfName.match(/\.(pdf)$/)) {
+		// 	errors.pdfName = "Format is not ok!";
 
-		}
+		// }
 
 
 
@@ -180,6 +180,7 @@ const EmployeeForm = () => {
 	} else if (values.password.length < 4) {
 	  errors.password = "Password must be more than 4 characters";
 	} */
+
 		return errors;
 	};
 

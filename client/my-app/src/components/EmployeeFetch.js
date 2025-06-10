@@ -83,10 +83,10 @@ const EmployeeFetch = () => {
 		formData.append('empName', employeeDetails.empName);
 		formData.append('empEmail', employeeDetails.empEmail);
 		formData.append('empMobile', employeeDetails.empMobile);
-		formData.append('empDob', employeeDetails.empDob);
+		// formData.append('empDob', employeeDetails.empDob);
 		formData.append('empStatus', empStatus);
-		formData.append('empTiming', empTiming);
-		formData.append('empLocation', empLocation);
+		// formData.append('empTiming', empTiming);
+		// formData.append('empLocation', empLocation);
 		if (file) {
 			formData.append('file', file);
 		}
@@ -136,25 +136,25 @@ const EmployeeFetch = () => {
 						<th>Employee Email</th>
 						<th>Employee Mobile</th>
 						<th>Employee Current Status</th>
-						<th>Employee Timings</th>
+						{/* <th>Employee Timings</th>
 						<th>Employee Location</th>
 						<th>Employee Date of birth</th>
 						<th>Images</th>
-						<th>Download Images</th>
+						<th>Download Images</th> */}
 						<th>Edit</th>
 						<th>Delete</th>
 					</tr>
 				</thead>
 				<tbody>
 					{employee_data.length > 0
-						?  employee_data.map((employee, index) => (
+						? employee_data.map((employee, index) => (
 							<tr key={employee._id}>
 								<td>{index + 1}</td>
 								<td>{employee.empName}</td>
 								<td>{employee.empEmail}</td>
 								<td>{employee.empMobile}</td>
 								<td>{employee.empStatus}</td>
-								<td>{employee.empTiming}</td>
+								{/* <td>{employee.empTiming}</td>
 								<td>{employee.empLocation.join(',')}</td>
 								<td>{employee.empDob ? moment(employee.empDob).format('DD-MM-YYYY') : '---'}</td>
 								<td><img style={{ width: '70%' }} src={'/imagesomar/' + employee.empPhoto} alt='' />
@@ -162,7 +162,7 @@ const EmployeeFetch = () => {
 								<td><a onClick={() => downloadPdf(employee)}>
 									Download PDF
 								</a>
-								</td>
+								</td> */}
 								<td><Button
 									onClick={() => editEmployee(employee)}
 									variant="primary">Edit</Button></td>
@@ -201,7 +201,7 @@ const EmployeeFetch = () => {
 								onChange={(e) => setEmployeeDetails({ ...employeeDetails, empMobile: e.target.value })}
 							/>
 						</Form.Group>
-						<Form.Group className="mb-3" >
+						{/* <Form.Group className="mb-3" >
 							<Form.Label>Employee Images</Form.Label>
 							<input type='file' onChange={SaveFile} />
 							<td><img style={{ width: '40%' }} src={employeeDetails ? '/imagesomar/' + employeeDetails.empPhoto : ''} alt='' />
@@ -210,7 +210,7 @@ const EmployeeFetch = () => {
 						<Form.Group className="mb-3">
 							<Form.Label>Employee PDF</Form.Label>
 							<input type='file' name="pdf" onChange={SaveFilePdf} />
-						</Form.Group>
+						</Form.Group> */}
 						<Form.Group className="mb-3" >
 							<Form.Label>Employee Status</Form.Label>
 							{current_status.map(cur_sta => (
@@ -223,7 +223,7 @@ const EmployeeFetch = () => {
 								</>
 							))}
 						</Form.Group>
-						<Form.Group className="mb-3">
+						{/* <Form.Group className="mb-3">
 							<Form.Label>Employee Timings</Form.Label>
 							<select onChange={(e) => setEmpTiming(e.target.value)} value={empTiming} >
 								<option value="">Timings</option>
@@ -252,7 +252,7 @@ const EmployeeFetch = () => {
 							<Button variant="primary" type="submit">
 								Submit
 							</Button>
-						</Form.Group>
+						</Form.Group> */}
 					</Form>
 				</Modal.Body>
 			</Modal>
